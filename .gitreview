@@ -1,0 +1,4 @@
+[gerrit]
+host=125.88.159.218
+port=29418
+project=citest.git
