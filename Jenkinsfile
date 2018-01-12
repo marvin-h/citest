@@ -1,24 +1,14 @@
 pipeline {
     agent {
-        label 'argus'
+        label 'bss'
     }
     stages {
-        stage('SCM pull') {
+        stage('Compile') {
             steps {
-                echo 'Doing...'
+                sh 'mvn -U compile'
             }
         }
-        stage('Static program analysis') {
-            steps {
-                echo 'Doing...'
-            }
-        }
-        stage('Build') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-        stage('Test') {
+        stage('Unit Test') {
             steps {
                 echo 'Testing..'
             }
@@ -30,3 +20,4 @@ pipeline {
         }
     }
 }
+
